@@ -19,4 +19,5 @@ urlpatterns = [
     path('check-out', CheckOut.as_view() , name='checkout'),
     path('orders', auth_middleware(OrderView.as_view()), name='orders'),
     path('send_mail',send_mail ,name  ='send_mail'),
+  
 ]
