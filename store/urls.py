@@ -8,6 +8,7 @@ from .views.checkout import CheckOut
 from .views.orders import OrderView
 from .middlewares.auth import  auth_middleware
 from .views.send_mail import send_mail
+from .views.search import Search
 urlpatterns = [
     path('', Index.as_view(), name='homepage'),
     path('store', store , name='store'),
@@ -19,5 +20,5 @@ urlpatterns = [
     path('check-out', CheckOut.as_view() , name='checkout'),
     path('orders', auth_middleware(OrderView.as_view()), name='orders'),
     path('send_mail',send_mail ,name  ='send_mail'),
-  
+    path('search', Search.as_view(), name='search'),
 ]
